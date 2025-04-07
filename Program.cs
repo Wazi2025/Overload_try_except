@@ -50,7 +50,7 @@ class Program
         int num2 = 0;
         double decNum1;
         double decNum2;
-        const string notCorrectMessage = "is not the correct format";
+        const string decimalMessage = "is a whole number. Decimal expected";
         const int dontPanic = 42;
         const string dontPanicMessage = @"
       ____                     __   __        ____                               
@@ -85,7 +85,7 @@ class Program
                     try
                     {
                         //convert strings to integer in a try/catch block
-                        //will throw Exception if it fails
+                        //will throw Exception if conversion fails
                         num1 = Convert.ToInt32(calc.Number1);
                         num2 = Convert.ToInt32(calc.Number2);
 
@@ -112,24 +112,29 @@ class Program
                     try
                     {
                         //convert strings to decimal in a try/catch block
-                        //will throw Exception if it fails
+                        //will throw Exception if conversion fails
                         //since C# implicitly converts int to decimal types, 
                         //pure int's like 5 will convert as well 
-
                         decNum1 = Convert.ToDouble(calc.Number1);
                         decNum2 = Convert.ToDouble(calc.Number2);
 
                         //but we will check if userinput contains a dot, i.e. it's a decimal type
-                        //note: some funny stuff going on here. might have to remove it
+                        if (!calc.Number1.Contains(decimalSeparator) && !calc.Number2.Contains(decimalSeparator))
+                        {
+                            Console.WriteLine($"'{calc.Number1}' {decimalMessage}.");
+                            Console.WriteLine($"'{calc.Number2}' {decimalMessage}.\n");
+                            //break;
+                        }
+
                         if (!calc.Number1.Contains(decimalSeparator))
                         {
-                            Console.WriteLine($"'{calc.Number1}' {notCorrectMessage}.\n");
-                            break;
+                            Console.WriteLine($"'{calc.Number1}' {decimalMessage}.\n");
+                            //break;
                         }
                         else if (!calc.Number2.Contains(decimalSeparator))
                         {
-                            Console.WriteLine($"'{calc.Number2}' {notCorrectMessage}.\n");
-                            break;
+                            Console.WriteLine($"'{calc.Number2}' {decimalMessage}.\n");
+                            //break;
                         }
 
                         //display a special message if the sum is the answer to Life, the Universe & Everything :-)
