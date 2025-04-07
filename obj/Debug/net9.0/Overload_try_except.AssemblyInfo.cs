@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Overload_try_except")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1aac711f382d0495d71a9f45a2650728a471bf3d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Overload_try_except")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Overload_try_except")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

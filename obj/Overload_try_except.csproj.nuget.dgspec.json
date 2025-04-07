@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Instruktor\\Desktop\\CSharp\\Overload_try_except\\Overload_try_except.csproj": {}
+    "c:\\Users\\Instruktor\\Desktop\\CSharp\\Overload_try_except\\Overload_try_except.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Instruktor\\Desktop\\CSharp\\Overload_try_except\\Overload_try_except.csproj": {
+    "c:\\Users\\Instruktor\\Desktop\\CSharp\\Overload_try_except\\Overload_try_except.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Instruktor\\Desktop\\CSharp\\Overload_try_except\\Overload_try_except.csproj",
+        "projectUniqueName": "c:\\Users\\Instruktor\\Desktop\\CSharp\\Overload_try_except\\Overload_try_except.csproj",
         "projectName": "Overload_try_except",
-        "projectPath": "C:\\Users\\Instruktor\\Desktop\\CSharp\\Overload_try_except\\Overload_try_except.csproj",
+        "projectPath": "c:\\Users\\Instruktor\\Desktop\\CSharp\\Overload_try_except\\Overload_try_except.csproj",
         "packagesPath": "C:\\Users\\Instruktor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Instruktor\\Desktop\\CSharp\\Overload_try_except\\obj\\",
+        "outputPath": "c:\\Users\\Instruktor\\Desktop\\CSharp\\Overload_try_except\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Instruktor\\AppData\\Roaming\\NuGet\\NuGet.Config"
