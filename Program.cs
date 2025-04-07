@@ -118,23 +118,20 @@ class Program
                         decNum1 = Convert.ToDouble(calc.Number1);
                         decNum2 = Convert.ToDouble(calc.Number2);
 
-                        //but we will check if userinput contains a dot, i.e. it's a decimal type
+                        //but we will check if userinput does not contain a dot, i.e. it's a decimal type
+                        //and inform user that a decimal is expected
                         if (!calc.Number1.Contains(decimalSeparator) && !calc.Number2.Contains(decimalSeparator))
                         {
                             Console.WriteLine($"'{calc.Number1}' {decimalMessage}.");
                             Console.WriteLine($"'{calc.Number2}' {decimalMessage}.\n");
-                            //break;
                         }
-
-                        if (!calc.Number1.Contains(decimalSeparator))
+                        else if (!calc.Number1.Contains(decimalSeparator))
                         {
                             Console.WriteLine($"'{calc.Number1}' {decimalMessage}.\n");
-                            //break;
                         }
                         else if (!calc.Number2.Contains(decimalSeparator))
                         {
                             Console.WriteLine($"'{calc.Number2}' {decimalMessage}.\n");
-                            //break;
                         }
 
                         //display a special message if the sum is the answer to Life, the Universe & Everything :-)
