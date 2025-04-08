@@ -21,27 +21,28 @@ class Program
         {
             return a + b;
         }
+        // public bool IsANumber(string? value)
+        // {
+        //     //note: not in use at the moment
+        //     //
+        //     //check if string can be converted to number                
+        //     if (int.TryParse(value, out int number) || decimal.TryParse(value, out decimal numberDec))
+        //         return true;
+        //     else
+        //         return false;
+        // }
 
-        public bool IsANumber(string? value)
-        {
-            //note: not in use at the moment
-            //
-            //check if string can be converted to number                
-            if (int.TryParse(value, out int number) || decimal.TryParse(value, out decimal numberDec))
-                return true;
-            else
-                return false;
-        }
-    }//end of class Calculator
+    }//end of class Calculator    
 
-    //instantiate our calc object at the Program class level since we will need to access it
-    //in the ReadInput method
-    static Calculator calc = new Calculator();
-
-    //method needs to be static so we can access our calc object
+    //method needs to be static so we can access it in Main
     static private void ReadInput()
     {
         bool programRunning = true;
+
+        //instantiate our Calc object
+        //we could do this at a higher level (Program class) but it's not really
+        //necessary since we only use it in the ReadInput method
+        Calculator calc = new Calculator();
 
         //fetch local decimal separator for numbers
         string decimalSeparator = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator;
@@ -89,12 +90,19 @@ class Program
                         num1 = Convert.ToInt32(calc.Number1);
                         num2 = Convert.ToInt32(calc.Number2);
 
+                        //note: we could have used a Func delegate like this, but since the assignment
+                        //was about method overloads, we'll use that instead
+                        //Func<int, int, int> result = (x, y) => num1 + num2;
+
                         //display a special message if the sum is the answer to Life, the Universe & Everything :-)
                         if (calc.Add(num1, num2) == dontPanic)
                             Console.WriteLine(dontPanicMessage);
                         else
-                            //display the sum
+                            //display the sum                            
                             Console.WriteLine($"The sum is: {calc.Add(num1, num2)}\n");
+
+                        //Func delegate version
+                        //Console.WriteLine(result(num1, num2));
                     }
                     catch (Exception error)
                     {
@@ -165,6 +173,7 @@ class Program
     {
         //call method
         ReadInput();
+
 
     }//end of Main
 }
