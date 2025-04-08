@@ -10,11 +10,14 @@ class Program
         //since we aren't using any custom logic in get/set we'll use C#'s auto-implementation
         public string? Number1 { get; set; }
         public string? Number2 { get; set; }
+        public string? Number3 { get; set; }
 
-        //create method's with the same name but a different amount or type of parameters == method overload
-        public int Add(int a, int b)
+        //create method's with the same name but a different amount or type of parameters == method overload.
+        //but if the int version of Add only had two integer parameters it would have been skipped
+        //since C# implicitly converts int to decimal types
+        public int Add(int a, int b, int c)
         {
-            return a + b;
+            return a + b + c;
         }
 
         public double Add(double a, double b)
@@ -38,6 +41,7 @@ class Program
 
         int num1 = 0;
         int num2 = 0;
+        int num3;
         double decNum1;
         double decNum2;
         const string decimalMessage = "is a whole number. Decimal expected";
@@ -58,7 +62,7 @@ class Program
         while (programRunning)
         {
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1. Add two integer numbers");
+            Console.WriteLine("1. Add three integer numbers");
             Console.WriteLine($"2. Add two decimal numbers (decimal separator is: '{decimalSeparator}')");
             Console.WriteLine("3. Exit");
             string? input = Console.ReadLine();
@@ -71,6 +75,8 @@ class Program
                     calc.Number1 = Console.ReadLine();
                     Console.WriteLine("Second number:");
                     calc.Number2 = Console.ReadLine();
+                    Console.WriteLine("Third number:");
+                    calc.Number3 = Console.ReadLine();
 
                     try
                     {
@@ -78,13 +84,14 @@ class Program
                         //will throw Exception if conversion fails
                         num1 = Convert.ToInt32(calc.Number1);
                         num2 = Convert.ToInt32(calc.Number2);
+                        num3 = Convert.ToInt32(calc.Number3);
 
                         //display a special message if the sum is the answer to Life, the Universe & Everything :-)
-                        if (calc.Add(num1, num2) == dontPanic)
+                        if (calc.Add(num1, num2, num3) == dontPanic)
                             Console.WriteLine(dontPanicMessage);
                         else
                             //display the sum                            
-                            Console.WriteLine($"The sum is: {calc.Add(num1, num2)}\n");
+                            Console.WriteLine($"The sum is: {calc.Add(num1, num2, num3)}\n");
                     }
                     catch (Exception error)
                     {
@@ -102,7 +109,7 @@ class Program
                     try
                     {
                         //convert strings to decimal in a try/catch block
-                        //will throw Exception if conversion fails
+                        //will throw Exception if conversion fails.
                         //since C# implicitly converts int to decimal types, 
                         //pure integer's like 5 will convert as well 
                         decNum1 = Convert.ToDouble(calc.Number1);
@@ -155,7 +162,6 @@ class Program
     {
         //call method
         ReadInput();
-
 
     }//end of Main
 }
