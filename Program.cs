@@ -7,14 +7,14 @@ class Program
     //create a Calculator class    
     public class Calculator
     {
-        //since we aren't using any custom logic in get/set we'll use C#'s auto-implementation
+        //since we aren't using any custom logic in get/set we'll use C#'s auto-implementation        
         public string? Number1 { get; set; }
         public string? Number2 { get; set; }
         public string? Number3 { get; set; }
 
         //create method's with the same name but a different amount or type of parameters == method overload.
         //but if the int version of Add only had two integer parameters it would have been skipped
-        //since C# implicitly converts int to decimal types
+        //since C# implicitly converts int to decimal types and so would have used the double version
         public int Add(int a, int b, int c)
         {
             return a + b + c;
@@ -31,7 +31,7 @@ class Program
     {
         bool programRunning = true;
 
-        //instantiate our Calc object
+        //instantiate our Calc object.
         //we could do this at a higher level (Program class) but it's not really
         //necessary since we only use it in the ReadInput method
         Calculator calc = new Calculator();
