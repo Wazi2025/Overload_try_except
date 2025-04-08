@@ -21,6 +21,17 @@ class Program
         {
             return a + b;
         }
+        // public bool IsANumber(string? value)
+        // {
+        //     //note: not in use at the moment
+        //     //
+        //     //check if string can be converted to number                
+        //     if (int.TryParse(value, out int number) || decimal.TryParse(value, out decimal numberDec))
+        //         return true;
+        //     else
+        //         return false;
+        // }
+
     }//end of class Calculator    
 
     //method needs to be static so we can access it in Main
@@ -79,12 +90,19 @@ class Program
                         num1 = Convert.ToInt32(calc.Number1);
                         num2 = Convert.ToInt32(calc.Number2);
 
+                        //note: we could have used a Func delegate like this, but since the assignment
+                        //was about method overloads, we'll use that instead
+                        //Func<int, int, int> result = (x, y) => num1 + num2;
+
                         //display a special message if the sum is the answer to Life, the Universe & Everything :-)
                         if (calc.Add(num1, num2) == dontPanic)
                             Console.WriteLine(dontPanicMessage);
                         else
                             //display the sum                            
                             Console.WriteLine($"The sum is: {calc.Add(num1, num2)}\n");
+
+                        //Func delegate version
+                        //Console.WriteLine(result(num1, num2));
                     }
                     catch (Exception error)
                     {
@@ -104,7 +122,7 @@ class Program
                         //convert strings to decimal in a try/catch block
                         //will throw Exception if conversion fails
                         //since C# implicitly converts int to decimal types, 
-                        //pure integer's like 5 will convert as well 
+                        //pure int's like 5 will convert as well 
                         decNum1 = Convert.ToDouble(calc.Number1);
                         decNum2 = Convert.ToDouble(calc.Number2);
 
