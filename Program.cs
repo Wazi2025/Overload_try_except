@@ -33,7 +33,7 @@ class Program
 
         //Instantiate our Calc object.
         //We could do this at a higher level (Program class) but it's not really
-        //necessary since we only use it in the ReadInput method
+        //necessary since we only use it in the ReadInput method        
         Calculator calc = new Calculator();
 
         //Fetch local decimal separator for numbers
